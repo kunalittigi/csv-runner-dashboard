@@ -27,7 +27,7 @@ Built using **Next.js + shadcn/ui + Recharts + Papaparse**.
 
 ## 4) Setup Instructions
 
-### 🧩 Install dependencies
+### Install dependencies
 ```bash
 npm install
 
@@ -36,7 +36,8 @@ Environment
 No environment variables are required.
 .env is not needed for this project.
 
-🌱 Sample Data
+
+Sample Data
 
 A sample CSV file (sample.csv) is included in the root folder:
 
@@ -48,14 +49,14 @@ date,person,miles run
 2025-01-03,John,3.8
 
 
-5) Run & Verify
-🚀 Start the app
+5) Run and Verify
+Start the app
 npm run dev
 
 
 Visit http://localhost:3000
 
-🧠 Verify acceptance items
+Verify acceptance items
 
 Upload a valid CSV → shows metrics + charts.
 
@@ -68,10 +69,10 @@ Per-person charts appear below.
 Metrics show correct average, min, and max.
 
 
-6) Features & Limitations
+6) Features and Limitations
 Features
 
-CSV upload & validation
+CSV upload and validation
 
 Dynamic summary metrics (avg, min, max)
 
@@ -103,7 +104,7 @@ Support filtering by date range
 
 
 7)Notes on Architecture
-🧱 Folder Structure
+Folder Structure
 csv-runner-dashboard/
 │
 ├── app/
@@ -137,7 +138,7 @@ Charts rendered dynamically from parsed data
 
 
 
-8) Accessibility & UI
+8) Accessibility and UI
 
 Clear focus states and large clickable areas
 
