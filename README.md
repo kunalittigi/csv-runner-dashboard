@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏃 CSV Runner Dashboard
 
-## Getting Started
+## 1) Project Overview
+This project is a **CSV Runner Dashboard** built for the **Dayant Tech Frontend Assignment**.  
+It allows users to upload a CSV file with columns `date`, `person`, and `miles run`, and view:
+- Data visualizations (overall + per-person)
+- Summary metrics (average, min, max miles)
+- Proper error handling for invalid CSV files
 
-First, run the development server:
+Built using **Next.js + shadcn/ui + Recharts + Papaparse**.
 
+
+## 2) Assumptions
+- CSV file must contain exactly these headers:  
+  `date, person, miles run`
+- No database or authentication is required — the app runs fully in-browser.
+- Dates are valid and formatted as `YYYY-MM-DD`.
+- Decimal values in `miles run` are accepted.
+
+
+## 3) Prerequisites
+- Node.js version: **22.13.1**
+- npm version: **11.0.0**
+- No local database is needed.
+- Tools used: VS Code, PowerShell, and web browser (Chrome).
+
+
+## 4) Setup Instructions
+
+### 🧩 Install dependencies
 ```bash
+npm install
+
+Environment
+
+No environment variables are required.
+.env is not needed for this project.
+
+🌱 Sample Data
+
+A sample CSV file (sample.csv) is included in the root folder:
+
+date,person,miles run
+2025-01-01,John,3.2
+2025-01-01,Mary,4.1
+2025-01-02,John,2.9
+2025-01-02,Mary,5.0
+2025-01-03,John,3.8
+
+
+5) Run & Verify
+🚀 Start the app
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🧠 Verify acceptance items
 
-## Learn More
+Upload a valid CSV → shows metrics + charts.
 
-To learn more about Next.js, take a look at the following resources:
+Invalid CSV headers → shows red error message.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Overall chart appears for all people.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Per-person charts appear below.
 
-## Deploy on Vercel
+Metrics show correct average, min, and max.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+6) Features & Limitations
+Features
+
+CSV upload & validation
+
+Dynamic summary metrics (avg, min, max)
+
+Overall + per-person charts using Recharts
+
+Error handling for bad input
+
+Clean, responsive UI with shadcn/ui
+
+Works fully offline (no backend required)
+
+
+Limitations
+
+No persistent storage (data resets on reload)
+
+CSV must have consistent headers
+
+Limited accessibility testing
+
+
+Future Improvements
+
+Add CSV export/download feature
+
+Add dark mode
+
+Support filtering by date range
+
+
+7)Notes on Architecture
+🧱 Folder Structure
+csv-runner-dashboard/
+│
+├── app/
+│   ├── page.tsx     # Main dashboard page
+│   ├── globals.css  # Tailwind global styles
+│
+├── components/ui/   # shadcn components (button, card, input)
+├── sample.csv        # Example CSV data
+├── package.json
+└── README.md
+
+
+Key Components
+
+page.tsx → Handles upload, parsing, and chart rendering
+
+Papaparse → CSV parsing
+
+Recharts → Data visualization
+
+shadcn/ui → Modern, accessible UI components
+
+
+State and Data Flow
+
+State managed via React hooks (useState)
+
+CSV data parsed and validated client-side
+
+Charts rendered dynamically from parsed data
+
+
+
+8) Accessibility & UI
+
+Clear focus states and large clickable areas
+
+Semantic HTML with headings and ARIA-friendly components
+
+Proper spacing and typography for readability
+
+High-contrast text and minimal color palette for accessibility
